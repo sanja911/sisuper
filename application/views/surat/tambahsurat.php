@@ -22,17 +22,17 @@
 	<body class="bg-dark">
 		<div class="container">
 			<div class="card card-login mx-auto mt-5">
-				<div class="card-header" align="center"><b>Pengajuan Surat Pengantar</b></div>
+				<div class="card-header" align="center"><b>Pengajuan Surat</b></div>
 				<div class="card-body">
 					<form method="post" action="<?php echo base_url('/surat/simpanpengajuan'); ?>">
 						<div class="form-group">
-							<label for="inputEmail4">No Kartu Keluarga</label>
-							<input name="nokk" id="nokk" type="text" onkeypress="return hanyaAngka(event)" minlength="16" minlength="16" maxlength="16" class="form-control" placeholder="No Kartu Keluarga" required>
+							<label for="inputEmail4">NISN/NIP</label>
+							<input name="nik" id="nik" type="text" onkeypress="return hanyaAngka(event)" minlength="12" maxlength="16" class="form-control" placeholder="Inputkan NISN/NIP yang sudah didaftarkan sebelumnya" required>
 						</div>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label for="inputPassword4">NIK</label>
 							<input name="nik" id="nik" type="text" onkeypress="return hanyaAngka(event)" minlength="16" maxlength="16" class="form-control" placeholder="Nomor Induk Kependudukan" required>
-						</div>
+						</div> -->
 						<div class="form-group">
 							<label>Jenis Surat</label>
 							<select name="idsurat" id="inputState" class="form-control" required>
@@ -59,7 +59,7 @@
 						<div class="text-center">
 							<a class="d-block small mt-3"><?php echo $this->session->flashdata('message'); ?></a>
 						</div>
-			
+
 					</div>
 				</div>
 			</div>

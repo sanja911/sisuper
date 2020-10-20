@@ -10,7 +10,7 @@ class Surat extends CI_Controller {
 				// //$this->load->view('surat/footer');
 	}
 	public function simpanpengajuan(){
-		$nokk=$this->input->post('nokk');
+		$nokk=$this->input->post('nik');
 		$nik=$this->input->post('nik');
 		$idsurat=$this->input->post('idsurat');
 		$tanggal=$this->input->post('tanggal');
@@ -28,44 +28,25 @@ class Surat extends CI_Controller {
 		}else if($cekriwayat2>0){
 			$this->session->set_flashdata('message', 'Anda Sedang Mengajukan Surat Yang Sama,silahkan hubungi TU untuk mencetak ulang!');
 			redirect(base_url('/surat'),'refresh');
-		}else{
-			$cekriwayat3=$this->db->query("SELECT * FROM mengajukan
-				WHERE nik='$nik'
-				AND idsurat='$idsurat'
-				AND statusrt='Y'
-				AND statusrw='N' ")->num_rows();
-			if($cekriwayat3>0){
-				$this->session->set_flashdata('message', 'Anda Sedang Mengajukan Surat Yang Sama,silahkan hubungi TU untuk mencetak ulang !');
-				redirect(base_url('/surat'),'refresh');
-			}else{
-				$cekriwayat4=$this->db->query("SELECT * FROM mengajukan
-					WHERE nik='$nik'
-					AND idsurat='$idsurat'
-					AND statusrt='Y'
-					AND statusrw='Y'
-					AND statusdesa='N' ")->num_rows();
-				if($cekriwayat4>0){
-					$this->session->set_flashdata('message', 'Anda Sedang Mengajukan Surat Yang Sama dan Silahkan Datang ke Kantor Desa');
-					redirect(base_url('/surat'),'refresh');
-				}else{
-					$query=$this->db->query("SELECT * FROM datawarga
-					WHERE nokk='$nokk' AND nik='$nik' ")->num_rows();
-					if($query>0){
-						$aksi = $this->input->post('aksi');
+  	}else{
+			$query=$this->db->query("SELECT * FROM datawarga WHERE nokk='$nokk' AND nik='$nik' ")->num_rows();
+			if($query>0){
+			$aksi = $this->input->post('aksi');
 						$data = [
 										'nik'	=> $this->input->post('nik'),
 										'idsurat'	=> $this->input->post('idsurat'),
-										'tanggal'	=> $this->input->post('tanggal')
+										'tanggal'	=> $this->input->post('tanggal'),
+										'statusrt' => "Y",
+										'statusrw' => "Y",
+										'statusdesa' => "Y"
 						];
-						$query = $this->db->insert('mengajukan',$data);
-						$this->session->set_flashdata('message', 'Tambah Surat Berhasil');
-						redirect(base_url('/surat'),'refresh');
-					}else{
-						$this->session->set_flashdata('message', 'Tambah Surat Gagal - (data tidak benar)');
-						redirect(base_url('/surat'),'refresh');
+			$query = $this->db->insert('mengajukan',$data);
+			$this->session->set_flashdata('message', 'Tambah Surat Berhasil');
+			redirect(base_url('/surat'),'refresh');
+		}else{
+				$this->session->set_flashdata('message', 'Tambah Surat Gagal - (data tidak benar)');
+				redirect(base_url('/surat'),'refresh');
 					}
 				}
 			}
 		}
-	}
-}
