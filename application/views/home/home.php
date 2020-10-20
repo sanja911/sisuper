@@ -15,7 +15,7 @@
 		//////////////////////////////////////////////////////
 		FREE HTML5 TEMPLATE
 		DESIGNED & DEVELOPED by FREEHTML5.CO
-			
+
 						Website: 		http://freehtml5.co/
 								Email: 			info@freehtml5.co
 						Twitter: 		http://twitter.com/fh5co
@@ -35,7 +35,7 @@
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
-	
+
 	<!-- Animate.css -->
 	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/animate.css">
@@ -87,7 +87,7 @@
 							<!-- <h2 class="to-animate">Sistem Informasi Pengurusan Surat Pengantar Desa <span>Bandasari</span></h2> -->
 							<h2 class="to-animate"><hr></h2>
 							<div class="call-to-action">
-								<a href="<?= base_url('domisili'); ?>" class="demo to-animate"><i class="fa fa-child"></i>Lapor Pendatang</a>
+								<a href="<?= base_url('domisili'); ?>" class="demo to-animate"><i class="fa fa-child"></i>Daftar Siswa/Guru</a>
 								<a href="<?= base_url('surat'); ?>" class="download to-animate"><i class="fa fa-search-plus"></i>Pengajuan Surat</a>
 							</div>
 						</div>

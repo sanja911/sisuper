@@ -22,21 +22,19 @@
 	<body class="bg-dark">
 		<div class="container">
 			<div class="card mx-auto mt-5">
-				<div class="card-header" align="center"><b>Lapor Warga Pendatang</b></div>
+				<div class="card-header" align="center"><b>Register User</b></div>
 				<div class="text-center">
 				<a class="d-block small mt-3"><?php echo $this->session->flashdata('message'); ?></a></div>
 				<div class="card-body">
 					<form action="<?= base_url('datawarga/aksitambah'); ?>" method="POST">
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<label for="inputEmail4">No Kartu Keluarga</label>
+								<label for="inputEmail4">NISN/NIP</label>
 								<input type="hidden" name="aksi">
-								<input name="nokk" type="text" onkeypress="return hanyaAngka(event)" minlength="16" maxlength="16" class="form-control" placeholder="No Kartu Keluarga" required>
+								<input name="nik" type="text" onkeypress="return hanyaAngka(event)" minlength="5" maxlength="16" class="form-control" placeholder="No NISN/NIP" required>
 							</div>
-							<div class="form-group col-md-6">
-								<label for="inputPassword4">NIK</label>
-								<input name="nik" type="text" onkeypress="return hanyaAngka(event)" minlength="16" maxlength="16" class="form-control" placeholder="Nomor Induk Kependudukan" required>
-							</div>
+
+								<input name="nokk" value="-" type="hidden" onkeypress="return hanyaAngka(event)" minlength="16" maxlength="16" class="form-control" placeholder="Nomor Induk Kependudukan" required>
 						</div>
 						<div class="form-row">
 							<div class="form-group col-md-6">
@@ -76,111 +74,50 @@
 									<option value="Kepercayaan">Kepercayaan</option>
 								</select>
 							</div>
-							<div class="form-group col-md-6">
-								<label>Pendidikan</label>
-								<select name="pendidikan" id="inputState" class="form-control" required>
+							<div class="form-group col-md-3">
+								<label>Status</label>
+								<select name="jenispekerjaan" id="inputState" class="form-control" required>
 									<option selected>Pilih...</option>
-									<option value="Tidak/Belum Sekolah">Tidak/Belum Sekolah</option>
-									<option value="Belum Tamat SD/Sederajat">Belum Tamat SD/Sederajat</option>
-									<option value="Tamat SD/Sederajat">Tamat SD/Sederajat</option>
-									<option value="SLTP/Sederajat">SLTP/Sederajat</option>
-									<option value="SLTA/Sederajat">SLTA/Sederajat</option>
-									<option value="Diploma I/II">Diploma I/II</option>
-									<option value="Akademi/Diploma III">Akademi/Diploma III</option>
-									<option value="Diploma IV/Strata I">Diploma IV/Strata I</option>
-									<option value="Strata II">Strata II</option>
-									<option value="Strata III">Strata III</option>
+									<option value="Kawin">Pelajar</option>
+									<option value="Belum Kawin">Pengajar/Guru</option>
+
 								</select>
 							</div>
-						</div>
-						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label>Jenis Pekerjaan</label>
-								<input name="jenispekerjaan" type="text" class="form-control" placeholder="Jenis Pekerjaan" required>
-							</div>
-							<div class="form-group col-md-6">
-								<label>Status Perkawaninan</label>
-								<select name="statusperkawinan" id="inputState" class="form-control" required>
-									<option selected>Pilih...</option>
-									<option value="Kawin">Kawin</option>
-									<option value="Belum Kawin">Belum Kawin</option>
-									<option value="Cerai Hidup">Cerai Hidup</option>
-									<option value="Cerai Mati">Cerai Mati</option>
-								</select>
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label>Status Dalam Keluarga</label>
-								<select name="statusdalamkeluarga" id="inputState" class="form-control" required>
-									<option selected>Pilih...</option>
-									<option value="Suami">Suami</option>
-									<option value="Istri">Istri</option>
-									<option value="Anak">Anak</option>
-									<option value="Menantu">Menantu</option>
-									<option value="Cucu">Cucu</option>
-									<option value="Orangtua">Orangtua</option>
-									<option value="Mertua">Mertua</option>
-									<option value="Famili Lain">Famili Lain</option>
-									<option value="Pembantu">Pembantu</option>
-									<option value="Lainya">Lainya</option>
-								</select>
-							</div>
-							<div class="form-group col-md-6">
-								<label>Apakah Kepala Keluarga ?</label>
-								<select id="inputState" name="kepalakeluarga" class="form-control" required>
-									<option selected>Pilih...</option>
-									<option value="Ya">Ya</option>
-									<option value="Bukan">Bukan</option>
-								</select>
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label>Nama Ayah</label>
-								<input name="ayah" type="text" class="form-control" placeholder="Nama Ayah" required>
-							</div>
-							<div class="form-group col-md-6">
-								<label>Nama Ibu</label>
-								<input name="ibu" type="text" class="form-control" placeholder="Nama Ibu" required>
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label>RT</label>
-								<select name="rt" id="inputState" name="rt" class="form-control" required>
-									<option selected>Pilih...</option>
-									<option value="01">01</option>
-									<option value="02">02</option>
-									<option value="03">03</option>
-									<option value="04">04</option>
-									<option value="05">05</option>
-									<option value="06">06</option>
-									<option value="07">07</option>
-									<option value="08">08</option>
-									<option value="09">09</option>
-									<option value="010">10</option>
-									<option value="011">11</option>
-									<option value="012">12</option>
-								</select>
-							</div>
-							<div class="form-group col-md-6">
-								<label>RW</label>
+							<div class="form-group col-md-3">
+
+								<label>Kelas</label>
 								<select name="rw" id="inputState" name="rt" class="form-control" required>
 									<option selected>Pilih...</option>
-									<option value="01">01</option>
-									<option value="02">02</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
 								</select>
 							</div>
+								<input value="-" name="pendidikan" id="inputState" class="form-control" type="hidden" required>
 						</div>
 						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label>Status Tinggal</label>
-								<input name="statustinggal" type="text" class="form-control" value="Tidak Tetap" readonly>
-							</div>
-							<div class="form-group col-md-6">
+
+								<input name="jenispekerjaan" type="hidden" class="form-control" placeholder="Jenis Pekerjaan" value="-" required>
+
+						</div>
+								<input name="statusdalamkeluarga" type="hidden" id="inputState" class="form-control" value="-"required>
+
+								<input id="inputState" name="kepalakeluarga" class="form-control" type="hidden" value="-" required>
+
+						<div class="form-row">
+
+								<input name="ayah" type="hidden" value="-" class="form-control" placeholder="Nama Ayah" required>
+							<input name="ibu" type="hidden" value="-" class="form-control" placeholder="Nama Ibu" required>
+
+						</div>
+						<div class="form-row">
+
+						</div>
+						<div class="form-row">
+								<input name="statustinggal" type="hidden" class="form-control" value="-" readonly>
+							<div class="form-group col-md-12">
 								<label>Keterangan</label>
-								<textarea name="keterangan" class="form-control" placeholder="Asal Wilayah Domisili" required></textarea>
+								<textarea name="keterangan" class="form-control" placeholder="Keterangan Tambahan" required></textarea>
 							</div>
 						</div>
 						<div class="row">

@@ -23,10 +23,10 @@ class Surat extends CI_Controller {
 			AND idsurat='$idsurat'
 			AND statusrt='N' ")->num_rows();
 		if($cekriwayat1>0){
-			$this->session->set_flashdata('message', 'Anda Sudah Mengajukan Surat Yang Sama Pada Hari Ini !');
+			$this->session->set_flashdata('message', 'Anda Sudah Mengajukan Surat Yang Sama Pada Hari Ini, silahkan hubungi TU untuk mencetak ulang !');
 			redirect(base_url('/surat'),'refresh');
 		}else if($cekriwayat2>0){
-			$this->session->set_flashdata('message', 'Anda Sedang Mengajukan Surat Yang Sama dan Masih Proses di Ketua RT !');
+			$this->session->set_flashdata('message', 'Anda Sedang Mengajukan Surat Yang Sama,silahkan hubungi TU untuk mencetak ulang!');
 			redirect(base_url('/surat'),'refresh');
 		}else{
 			$cekriwayat3=$this->db->query("SELECT * FROM mengajukan
@@ -35,7 +35,7 @@ class Surat extends CI_Controller {
 				AND statusrt='Y'
 				AND statusrw='N' ")->num_rows();
 			if($cekriwayat3>0){
-				$this->session->set_flashdata('message', 'Anda Sedang Mengajukan Surat Yang Sama dan Masih Proses di Ketua RW !');
+				$this->session->set_flashdata('message', 'Anda Sedang Mengajukan Surat Yang Sama,silahkan hubungi TU untuk mencetak ulang !');
 				redirect(base_url('/surat'),'refresh');
 			}else{
 				$cekriwayat4=$this->db->query("SELECT * FROM mengajukan

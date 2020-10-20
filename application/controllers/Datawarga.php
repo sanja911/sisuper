@@ -101,12 +101,12 @@ class Datawarga extends CI_Controller {
 							'ayah'	=> $this->input->post('ayah'),
 							'ibu'	=> $this->input->post('ibu'),
 							'kepalakeluarga'	=> $this->input->post('kepalakeluarga'),
-							'nokk'	=> $this->input->post('nokk'),
+							'nokk'	=> $this->input->post('nik'),
 							'statustinggal'	=> $this->input->post('statustinggal'),
 							'rt'	=> $this->input->post('rt'),
 							'rw'	=> $this->input->post('rw'),
 							'keterangan'	=> $this->input->post('keterangan'),
-							'status'	=> $status
+							'status'	=> "1"
 			];
 			if ($aksi != 'update')
 			{
@@ -122,8 +122,8 @@ class Datawarga extends CI_Controller {
 				if ($cek != ""){
 					redirect(base_url('datawarga'),'refresh');
 				}else{
-					$this->session->set_flashdata('message', 'Lapor Warga Pendatang Berhasil - (Anda Harus Datang Ke Rumah Ketua RT Untuk Konfirmasi)');
-					redirect(base_url('domisili'),'refresh');
+					$this->session->set_flashdata('message', 'Register Berhasil, Anda sudah dapat melakukan pengajuan surat dengan menggunakan NISN/NIP');
+					redirect(base_url(),'refresh');
 				}
 			}
 			else{
