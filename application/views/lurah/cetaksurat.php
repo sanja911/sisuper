@@ -1,5 +1,5 @@
 <head>
-  <title>Surat Pengantar Desa Bandasari</title>
+  <title>Surat Keterangan</title>
   <style type="text/css">
    .upper { text-transform: uppercase; }
    .lower { text-transform: lowercase; }

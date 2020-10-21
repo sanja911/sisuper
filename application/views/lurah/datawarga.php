@@ -19,7 +19,7 @@
                     <th>NAMA</th>
                     <th>KELAHIRAN</th>
                     <th>NO KELUARGA</th>
-                    <th>PEKERJAAN</th>
+                    <th>STATUS</th>
                     <th>PENGATURAN</th>
                 </tr>
             </thead>
@@ -30,8 +30,8 @@
                     <td><?php echo $row -> nama; ?></td>
                     <td><?php echo $row -> tempatlahir; ?>, <?php echo $row -> tanggallahir; ?></td>
                     <td align="center"><?php echo $row -> nokk; ?></td>
-                    <td><?php echo $row -> jenispekerjaan; ?></td>
-                    <td align="center"><a href="<?= base_url('datawarga/lihatwarga').'/'.$row -> nik; ?>" class="btn btn-sm btn btn-outline-success">Lihat</a>&nbsp;<a href="<?= base_url('kartukeluarga/detailkeluarga').'/'.$row -> nokk; ?>" class="btn btn-sm btn btn-outline-success">Keluarga</a></td>
+                    <td align="center"><?php echo $row -> jenispekerjaan; ?></td>
+                    <td align="center"><a href="<?= base_url('datawarga/lihatwarga').'/'.$row -> nik; ?>" class="btn btn-sm btn btn-outline-success">Lihat</a>&nbsp;</td>
                 </tr>
                 <?php } ?>
             </tbody>
@@ -41,7 +41,7 @@
                     <th>NAMA</th>
                     <th>KELAHIRAN</th>
                     <th>NO KELUARGA</th>
-                    <th>PEKERJAAN</th>
+                    <th>STATUS</th>
                     <th>PENGATURAN</th>
                 </tr>
             </troot>

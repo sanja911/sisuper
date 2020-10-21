@@ -12,8 +12,8 @@
     	</div>
     </div><br>
     <div align="center">
-    	<font face="consolas" size="7" color="Blue">Aplikasi SISUPER V1.0</font><br>
-        <font face="consolas" size="6">(Dibuat oleh Abdul Aziz pada Tugas Akhir di PNC)</font>
+    	<font face="consolas" size="7" color="Blue">Aplikasi SISUKE BETA V1.0</font><br>
+        <!-- <font face="consolas" size="6">(Dibuat oleh Abdul Aziz pada Tugas Akhir di PNC)</font> -->
     </div>
   </div>
 </div>

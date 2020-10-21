@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>SISUPER - Sistem Informasi Surat Pengantar</title>
+    	<title>SISUKE | Sistem Informasi Pengurusan Surat Keterangan</title>
   <!-- Bootstrap core CSS-->
   <link href="<?php echo base_url(); ?>asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -20,7 +20,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="<?= base_url(''); ?>"><b>DESA BANDASARI</b></a>
+    <a class="navbar-brand" href="<?= base_url(''); ?>"><b>SMAN 7 MALANG</b></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,12 +33,12 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="<?= base_url('datawarga'); ?>">
+          <a class="nav-link" href="<?= base_url('data'); ?>">
             <i class="fa fa-address-card-o"></i>
-            <span class="nav-link-text">Warga Domisili</span>
+            <span class="nav-link-text">Data</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="<?= base_url('wargapendatang'); ?>">
             <i class="fa fa-odnoklassniki"></i>
             <span class="nav-link-text">Warga Pendatang</span>
@@ -49,7 +49,7 @@
             <i class="fa fa-group"></i>
             <span class="nav-link-text">Kartu Keluarga</span>
           </a>
-        </li>
+        </li> -->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="<?= base_url('datasurat'); ?>">
             <i class="fa fa-envelope-o"></i>

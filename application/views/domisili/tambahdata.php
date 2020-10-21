@@ -11,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>Lapor Warga Pendatang | SISUPER</title>
+		<title>Register User | SISUKE</title>
 		<!-- Bootstrap core CSS-->
 		<link href="<?php echo base_url(); ?>asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Custom fonts for this template-->
@@ -78,8 +78,8 @@
 								<label>Status</label>
 								<select name="jenispekerjaan" id="inputState" class="form-control" required>
 									<option selected>Pilih...</option>
-									<option value="Kawin">Pelajar</option>
-									<option value="Belum Kawin">Pengajar/Guru</option>
+									<option value="Pelajar">Pelajar</option>
+									<option value="Pengajar/Guru">Pengajar/Guru</option>
 
 								</select>
 							</div>
@@ -94,11 +94,6 @@
 								</select>
 							</div>
 								<input value="-" name="pendidikan" id="inputState" class="form-control" type="hidden" required>
-						</div>
-						<div class="form-row">
-
-								<input name="jenispekerjaan" type="hidden" class="form-control" placeholder="Jenis Pekerjaan" value="-" required>
-
 						</div>
 								<input name="statusdalamkeluarga" type="hidden" id="inputState" class="form-control" value="-"required>
 
