@@ -18,6 +18,7 @@
 		<link href="<?php echo base_url(); ?>asset/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<!-- Custom styles for this template-->
 		<link href="<?php echo base_url(); ?>asset/css/sb-admin.css" rel="stylesheet">
+
 	</head>
 	<body class="bg-dark">
 		<div class="container">
@@ -29,16 +30,16 @@
 							<label for="inputEmail4">NISN/NIP</label>
 							<input name="nik" id="nik" type="text" onkeypress="return hanyaAngka(event)" minlength="12" maxlength="16" class="form-control" placeholder="Inputkan NISN/NIP yang sudah didaftarkan sebelumnya" required>
 						</div>
-						<!-- <div class="form-group">
-							<label for="inputPassword4">NIK</label>
-							<input name="nik" id="nik" type="text" onkeypress="return hanyaAngka(event)" minlength="16" maxlength="16" class="form-control" placeholder="Nomor Induk Kependudukan" required>
-						</div> -->
+						<div class="form-group">
+						<label for="inputEmail4">Status</label>
+						<input type="text" name="status" class="form-control" id="type" onchange="disable(this.value)"required disabled>
+						</div>
 						<div class="form-group">
 							<label>Jenis Surat</label>
-							<select name="idsurat" id="inputState" class="form-control" required>
+							<select name="idsurat"  class="form-control"  required>
 								<option selected value="">Pilih Jenis Surat...</option>
 								<?php foreach ($namasurat as $value) { ?>
-								<option value="<?php echo $value->idsurat; ?>"><?php echo $value->jenissurat; ?></option>
+								<option  value="<?php echo $value->idsurat; ?>"><?php echo $value->jenissurat; ?></option>
 								<?php } ?>
 							</select>
 						</div>
@@ -48,7 +49,7 @@
 						</div>
 						<div class="form-group">
 							<label>Keterangan</label>
-							<textarea name="keterangan" class="form-control" placeholder="Keterangan Surat" required></textarea>
+							<textarea name="keterangan" id="text-two" class="form-control" placeholder="Tuliskan tujuan pengajuan surat" required></textarea>
 						</div>
 						<div class="form-group">
 							<input class="btn btn-primary btn-block" type="submit" value="Kirim">
@@ -64,10 +65,39 @@
 				</div>
 			</div>
 			<!-- Bootstrap core JavaScript-->
-			<script src="vendor/jquery/jquery.min.js"></script>
-			<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+			<script src="<?php echo base_url(); ?>asset/vendor/jquery/jquery.min.js"></script>
+			<script src="<?php echo base_url(); ?>asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 			<!-- Core plugin JavaScript-->
-			<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+			<script src="<?php echo base_url(); ?>asset/vendor/jquery-easing/jquery.easing.min.js"></script>
+			<script type="text/javascript">
+        	  $(document).ready(function(){
+             $('#nik').on('input',function(){
+                 
+                var nik=$(this).val();
+                $.ajax({
+                    type : "POST",
+                    url  : "<?php echo base_url('/domisili/get_barang')?>",
+                    dataType : "JSON",
+                    data : {nik: nik},
+                    cache:false,
+                    success: function(data){
+                        $.each(data,function(pendidikan, jenispekerjaan){
+                            $('[name="status"]').val(data.pendidikan);
+                        });
+                        if(data.pendidikan==="Pengajar/Guru Honorer" || data.pendidikan==="Pengajar/Guru Honorer"){
+                        	$('[name="idsurat"]').val("101");
+                        }else{
+                        	$('[name="idsurat"]').val("110");	
+                        }
+                        
+                        }
+
+                });
+                return false;
+           });
+ 
+        });
+    </script>
 		</body>
 	</html>
 	<script>

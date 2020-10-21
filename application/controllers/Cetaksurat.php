@@ -23,7 +23,7 @@ class Cetaksurat extends CI_Controller {
 			redirect(base_url('home'),'refresh');
 		}
 		
-		$data['data'] =$this->db->query("SELECT datawarga.nama, datawarga.jeniskelamin, datawarga.tempatlahir, datawarga.tanggallahir, datawarga.statusperkawinan, datawarga.agama, datawarga.jenispekerjaan, datawarga.nik, suratpengantar.jenissurat, mengajukan.tanggal, mengajukan.idpengajuan FROM datawarga, suratpengantar, mengajukan
+		$data['data'] =$this->db->query("SELECT datawarga.nama, datawarga.jeniskelamin, datawarga.tempatlahir, datawarga.tanggallahir, datawarga.pendidikan, datawarga.agama, datawarga.jenispekerjaan, datawarga.nik, suratpengantar.jenissurat, mengajukan.tanggal, mengajukan.idpengajuan, mengajukan.keterangan FROM datawarga, suratpengantar, mengajukan
 			WHERE datawarga.nik = mengajukan.nik
 			AND mengajukan.idsurat = suratpengantar.idsurat")->row_array();
 		//jika kondisi diatas berhasil maka akan tampil halaman dashboard sesuai dengan $jabatan

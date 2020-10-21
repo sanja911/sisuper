@@ -16,9 +16,7 @@
     		<thead>
     			<tr>
 	    			<th>Nama</th>
-	    			<th>Rukun Tetangga</th>
-                    <th>Rukun Warga</th>
-                    <th>Kantor Desa</th>
+	    			<th>Status</th>
                     <th>NIK</th>
                     <th>Jenis Surat</th>
                     <th>Tanggal</th>
@@ -28,9 +26,7 @@
 	    		<?php foreach ($data as $row) { ?>
 	    		<tr>
                     <td><?php echo $row -> nama; ?></td>
-                    <td align="center"><?php if($row -> statusrt == 'Y'){ ?><a class="btn btn-sm btn btn-success">Selesai</a> <?php }else{ ?> <a  class="btn btn-sm btn btn-warning">Proses</a><?php } ?></td>
-                    <td align="center"><?php if($row -> statusrw == 'Y'){ ?><a class="btn btn-sm btn btn-success">Selesai</a> <?php }else if($row -> statusrw == 'N' && $row -> statusrt == 'Y'){ ?> <a  class="btn btn-sm btn btn-warning">Proses</a><?php }else if($row -> statusrw == 'N' && $row -> statusdesa == 'N'){ ?> <a  class="btn btn-sm btn btn-danger">Kosong</a><?php } ?></td>
-                    <td align="center"><?php if($row -> statusdesa == 'Y'){ ?><a class="btn btn-sm btn btn-success">Selesai</a> <?php }else if($row -> statusrw == 'Y' && $row -> statusrt == 'Y'){ ?> <a  class="btn btn-sm btn btn-warning">Proses</a><?php }else if($row -> statusrw == 'N' && $row -> statusdesa == 'N'){ ?> <a  class="btn btn-sm btn btn-danger">Kosong</a><?php } ?></td>
+                   <td align="center"><?php if($row -> statusdesa == 'Y'){ ?><a class="btn btn-sm btn btn-success">Tersimpan</a> <?php }else if($row -> statusrw == 'Y' && $row -> statusrt == 'Y'){ ?> <a  class="btn btn-sm btn btn-warning">Proses</a><?php }else if($row -> statusrw == 'N' && $row -> statusdesa == 'N'){ ?> <a  class="btn btn-sm btn btn-danger">Kosong</a><?php } ?></td>
                     <td><?php echo $row -> nik; ?></td>
                     <td><?php echo $row -> jenissurat; ?></td>
                     <td><?php echo $row -> tanggal; ?></td>
@@ -40,9 +36,8 @@
     		<troot>
     			<tr>
 	    			<th>Nama</th>
-                    <th>Rukun Tetangga</th>
-                    <th>Rukun Warga</th>
-                    <th>Kantor Desa</th>
+                    
+                    <th>Status</th>
                     <th>NIK</th>
                     <th>Jenis Surat</th>
                     <th>Tanggal</th>

@@ -64,7 +64,7 @@
 				<div class="navbar-header">
 					<!-- Mobile Toggle Menu Button -->
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-					<a class="navbar-brand" href="<?= base_url(''); ?>">Sisuper</a>
+					<a class="navbar-brand" href="<?= base_url(''); ?>">Sisuke</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
@@ -87,7 +87,7 @@
 							<!-- <h2 class="to-animate">Sistem Informasi Pengurusan Surat Pengantar Desa <span>Bandasari</span></h2> -->
 							<h2 class="to-animate"><hr></h2>
 							<div class="call-to-action">
-								<a href="<?= base_url('domisili'); ?>" class="demo to-animate"><i class="fa fa-child"></i>Daftar Siswa/Guru</a>
+								<a href="<?= base_url('register'); ?>" class="demo to-animate"><i class="fa fa-child"></i>Daftar Siswa/Guru</a>
 								<a href="<?= base_url('surat'); ?>" class="download to-animate"><i class="fa fa-search-plus"></i>Pengajuan Surat</a>
 							</div>
 						</div>

@@ -68,7 +68,7 @@
             <span class="nav-link-text">Status</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
           <a class="nav-link" href="<?= base_url('pengaturan'); ?>">
             <i class="fa fa-newspaper-o"></i>
             <span class="nav-link-text">Pengaturan</span>
@@ -79,7 +79,7 @@
             <i class="fa fa-fw fa-link"></i>
             <span class="nav-link-text">Tentang</span>
           </a>
-        </li>
+        </li> -->
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">

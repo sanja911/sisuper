@@ -11,7 +11,7 @@ class Datasurat extends CI_Controller {
 		$wilayah = $this->session->userdata('wilayah');
 		//jika jabatan lurah maka tampil datawarga
 		if ($jabatan == 'lurah'){
-			$data['data'] =$this->db->query("SELECT datawarga.nama, datawarga.jeniskelamin, datawarga.tempatlahir, datawarga.tanggallahir, datawarga.statusperkawinan, datawarga.agama, datawarga.jenispekerjaan, datawarga.nik, suratpengantar.jenissurat, mengajukan.tanggal, mengajukan.idpengajuan FROM datawarga, suratpengantar, mengajukan
+			$data['data'] =$this->db->query("SELECT * FROM datawarga, suratpengantar, mengajukan
 			WHERE datawarga.nik = mengajukan.nik
 			AND mengajukan.idsurat = suratpengantar.idsurat
 			AND mengajukan.statusdesa = 'N'
@@ -106,7 +106,7 @@ class Datasurat extends CI_Controller {
 		// jika kondisi diatas berhasil maka akan tampil halaman dashboard sesuai dengan $jabatan
 		$cek = $this->uri->segment(3);
 		//jika jabatan lurah maka tampil datawarga
-		$data['data'] =$this->db->query("SELECT datawarga.nama, datawarga.jeniskelamin, datawarga.tempatlahir, datawarga.tanggallahir, datawarga.statusperkawinan, datawarga.agama, datawarga.jenispekerjaan, datawarga.nik, datawarga.rt, datawarga.rw, datawarga.statustinggal, suratpengantar.jenissurat, mengajukan.tanggal, mengajukan.idpengajuan FROM datawarga, suratpengantar, mengajukan
+		$data['data'] =$this->db->query("SELECT datawarga.nama, datawarga.jeniskelamin, datawarga.tempatlahir, datawarga.tanggallahir,datawarga.pendidikan, datawarga.statusperkawinan, datawarga.agama, datawarga.jenispekerjaan, datawarga.nik, datawarga.rt, datawarga.rw, datawarga.statustinggal, suratpengantar.jenissurat, mengajukan.tanggal, mengajukan.idpengajuan,mengajukan.keterangan FROM datawarga, suratpengantar, mengajukan
 				WHERE datawarga.nik = mengajukan.nik
 				AND mengajukan.idsurat = suratpengantar.idsurat
 				AND mengajukan.idpengajuan = $cek")->row_array();

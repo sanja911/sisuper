@@ -14,6 +14,7 @@ class Surat extends CI_Controller {
 		$nik=$this->input->post('nik');
 		$idsurat=$this->input->post('idsurat');
 		$tanggal=$this->input->post('tanggal');
+		$keterangan=$this->input->post('keterangan');
 		$cekriwayat1=$this->db->query("SELECT * FROM mengajukan
 			WHERE nik='$nik'
 			AND idsurat='$idsurat'
@@ -36,9 +37,10 @@ class Surat extends CI_Controller {
 										'nik'	=> $this->input->post('nik'),
 										'idsurat'	=> $this->input->post('idsurat'),
 										'tanggal'	=> $this->input->post('tanggal'),
+										'keterangan' => $this->input->post('keterangan'),
 										'statusrt' => "Y",
 										'statusrw' => "Y",
-										'statusdesa' => "Y"
+										'statusdesa' => "N"
 						];
 			$query = $this->db->insert('mengajukan',$data);
 			$this->session->set_flashdata('message', 'Tambah Surat Berhasil');

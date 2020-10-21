@@ -78,7 +78,7 @@ class Datawarga extends CI_Controller {
 				AND kepalakeluarga='Ya'
 				AND statusdalamkeluarga='Suami' ")->num_rows();
 			if($cekdata1>0){
-				$this->session->set_flashdata('message', 'Kepala Keluarga atau Suami Sudah ada !');
+				$this->session->set_flashdata('message', '');
 				redirect(base_url('/domisili'),'refresh');
 			}
 		}else{

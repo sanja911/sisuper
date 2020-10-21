@@ -18,6 +18,24 @@
 		<link href="<?php echo base_url(); ?>asset/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<!-- Custom styles for this template-->
 		<link href="<?php echo base_url(); ?>asset/css/sb-admin.css" rel="stylesheet">
+		<script>
+  function disable(val)
+  {
+      if(val=="Pengajar/Guru Tetap" || val=="Pengajar/Guru Honorer" ){
+           document.getElementById("text-one").disabled=true;
+           document.getElementById("text-two").disabled=false;
+           // document.getElementById("text-three").disabled=true;
+           document.getElementById("text-one").value="-";
+           // document.getElementById("text-three").value="";
+      }else{
+           document.getElementById("text-two").disabled=true;
+           document.getElementById("text-one").disabled=false;
+           // document.getElementById("text-three").disabled=false;
+      	   document.getElementById("text-two").value="-";
+           }
+
+  }
+</script>
 	</head>
 	<body class="bg-dark">
 		<div class="container">
@@ -61,7 +79,7 @@
 							</div>
 						</div>
 						<div class="form-row">
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-3">
 								<label>Agama</label>
 								<select name="agama" id="inputState" class="form-control" required>
 									<option selected>Pilih...</option>
@@ -76,24 +94,36 @@
 							</div>
 							<div class="form-group col-md-3">
 								<label>Status</label>
-								<select name="jenispekerjaan" id="inputState" class="form-control" required>
+								<select name="pendidikan" class="form-control" id="type" onchange="disable(this.value)" required>
 									<option selected>Pilih...</option>
-									<option value="Pelajar">Pelajar</option>
-									<option value="Pengajar/Guru">Pengajar/Guru</option>
+									<option value="Pelajar" selected>Pelajar</option>
+									<option value="Pengajar/Guru Tetap">Pengajar/Guru Tetap</option>
+									<option value="Pengajar/Guru Honorer">Pengajar/Guru Honorer</option>
 
+							</select>
+							</div>
+							<div class="form-group col-md-3">
+
+								<label>Mata Pelajaran</label>
+								<select name="jenispekerjaan" id="text-two" name="rt" class="form-control" disabled >
+									<option value="Matematika" selected>Matematika</option>
+									<option value="Bahasa Indonesia">Bahasa Indonesia</option>
+									<option value="Bahasa Inggris">Bahasa Inggris</option>
+									<option value="IPA">IPA</option>
+									<option value="IPS">IPS</option>
+									<option value="PAI">PAI</option>
 								</select>
 							</div>
 							<div class="form-group col-md-3">
 
 								<label>Kelas</label>
-								<select name="rw" id="inputState" name="rt" class="form-control" required>
-									<option selected>Pilih...</option>
-									<option value="10">10</option>
+								<select name="rw" id="text-one" name="rt" class="form-control" disabled>
+									<option value="10" selected>10</option>
 									<option value="11">11</option>
 									<option value="12">12</option>
 								</select>
 							</div>
-								<input value="-" name="pendidikan" id="inputState" class="form-control" type="hidden" required>
+								
 						</div>
 								<input name="statusdalamkeluarga" type="hidden" id="inputState" class="form-control" value="-"required>
 
@@ -112,7 +142,7 @@
 								<input name="statustinggal" type="hidden" class="form-control" value="-" readonly>
 							<div class="form-group col-md-12">
 								<label>Keterangan</label>
-								<textarea name="keterangan" class="form-control" placeholder="Keterangan Tambahan" required></textarea>
+								<textarea name="keterangan" id="text-three" class="form-control" placeholder="Keterangan Tambahan"></textarea>
 							</div>
 						</div>
 						<div class="row">
@@ -132,9 +162,7 @@
 		<script src="vendor/jquery/jquery.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 		<!-- Core plugin JavaScript-->
-		<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-	</body>
-</html>
+
 <script>
 		function hanyaAngka(evt) {
 		var charCode = (evt.which) ? evt.which : event.keyCode
@@ -144,3 +172,7 @@
 		return true;
 		}
 </script>
+
+		<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+	</body>
+</html>

@@ -33,7 +33,7 @@
                         <td><?php echo $row -> nik; ?></td>
                         <td><?php echo $row -> jenissurat; ?></td>
                         <td><?php echo $row -> tanggal; ?></td>
-                        <td class="pull-left"><a href="<?= base_url('datawarga/lihatwarga').'/'.$row -> nik; ?>" class="btn btn-sm btn btn-primary">Detail</a>&nbsp;<a href="<?= base_url('datasurat/setuju').'/'.$row -> idpengajuan; ?>" class="btn btn-sm btn btn-success">Setuju</a>&nbsp;<a href="<?= base_url('datasurat/cetak').'/'.$row -> idpengajuan; ?>" class="btn btn-sm btn btn-danger" target="_blank">Cetak</a></td>
+                        <td class="pull-left"><a href="<?= base_url('datawarga/lihatwarga').'/'.$row -> nik; ?>" class="btn btn-sm btn btn-primary">Detail</a>&nbsp;<a href="<?= base_url('datasurat/setuju').'/'.$row -> idpengajuan; ?>" class="btn btn-sm btn btn-success">Simpan</a>&nbsp;<a href="<?= base_url('datasurat/cetak').'/'.$row -> idpengajuan; ?>" class="btn btn-sm btn btn-danger" target="_blank">Cetak</a></td>
                 </tr>
                 <?php } ?>
             </tbody>
